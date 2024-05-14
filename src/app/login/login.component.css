@@ -1,0 +1,76 @@
+/* General styles for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Input fields styling */
+  .input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  /* Changes the border color on input focus */
+  .input:focus {
+    border-color: #6658f6;
+    outline: none;
+  }
+  
+  /* Button styling */
+  .form-btn {
+    background-color: #6658f6; /* A darker shade for the button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  .form-btn:hover {
+    background-color: #5748b8;
+  }
+  
+  /* Sign-up link styles */
+  .sign-up-label {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .sign-up-link {
+    color: #6658f6;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .sign-up-link:hover {
+    text-decoration: underline;
+  }
+  

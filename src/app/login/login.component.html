@@ -1,0 +1,11 @@
+<div class="container justify-content-center mt-5 form-container">
+    <p class="title">Inicio de sesión</p>
+    <form class="form" (ngSubmit)="loginUser()">
+      <input type="email" class="input" placeholder="Email" name="email" [(ngModel)]="name">
+      <input type="password" class="input" placeholder="Contraseña" name="password" [(ngModel)]="password">
+      <button type="submit" class="form-btn">Iniciar sesión</button>
+    </form>
+    <p class="sign-up-label">
+      ¿No tienes una cuenta?<span class="sign-up-link" [routerLink]="['/register']">Regístrate</span>
+    </p>
+  </div>
