@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'EatEasy';
+  title = 'ReadRift';
 
   constructor(private router: Router) {}
   

@@ -22,11 +22,8 @@ export class LoginComponent {
         console.log('Login exitoso:', response);
         localStorage.setItem('token', response.token);
         
-
-        this.authService.login(this.name, this.password);
-
         if (this.authService.isAuthenticated()) {
-          this.router.navigate(['/index']);
+          this.router.navigate(['/lista-books']);
         } else {
           console.error('Error en la autenticación:', 'No se pudo verificar la autenticación del usuario');
           this.loginError = true;

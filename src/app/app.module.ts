@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaBooksComponent } from './lista-books/lista-books.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+import { UserComponent } from './user/user.component';
+
+
 
 
 @NgModule({
@@ -17,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     ListaBooksComponent,
     LoginComponent,
     RegisterComponent,
-    AuthComponent
+    AuthComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Agrega tu interceptor aquí como un proveedor
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

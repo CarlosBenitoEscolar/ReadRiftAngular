@@ -6,7 +6,7 @@ import { Register } from './register';
 @Injectable({
   providedIn: 'root'
 })
-export class ReguisterService {
+export class RegisterService {
   private signUpUrl = 'http://localhost:8080/api/auth/signup'; 
 
   constructor(private http: HttpClient) { }

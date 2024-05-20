@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReguisterService } from '../register.service';
+import { RegisterService } from '../register.service';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { Register } from '../register';
@@ -12,17 +12,19 @@ import { Register } from '../register';
 export class RegisterComponent {
   register: Register = { name: '', email:'' ,password: ''};
 
-  constructor(private registerService: ReguisterService, private authService: AuthService,  private router: Router) { }
+  constructor(private registerService: RegisterService, private authService: AuthService,  private router: Router) { }
 
   signUp(): void {
     this.registerService.signUp(this.register)
       .subscribe(
         response => {
           console.log('Registro exitoso:', response);
+          if (response.token) {
+            localStorage.setItem('token', response.token);
+          }
           console.log('Datos del usuario:', this.register);
           if (this.register.name !== undefined && this.register.password !== undefined) {
-            this.authService.login(this.register.name, this.register.password);
-            this.router.navigate(['/index']);
+            this.router.navigate(['/lista-books']);
           } else {
             console.error('Error al registrarse: Los campos name y password son requeridos.');
           }
