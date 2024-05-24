@@ -17,6 +17,12 @@ export class BookService {
   obtenerListaDeBooks():Observable<Book[]>{
     return this.httpClient.get<Book[]>(`${this.baseURL}`);
   }
+
+  obtenerLibrosDisponibles(): Observable<Book[]> {
+    // Usar la URL completa del endpoint para obtener solo libros disponibles
+    return this.httpClient.get<Book[]>(`${this.baseURL}/available/true`);
+  }
+  
 /*
   //este metodo nos sirve para registrar un libro
   registrarBook(book:Book) : Observable<Object>{

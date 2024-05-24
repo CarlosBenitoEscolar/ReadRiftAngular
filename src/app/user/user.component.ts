@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   }
 
   getUserByToken(): void {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('token') !== null) {
+    if (typeof localStorage !== undefined && localStorage.getItem('token') !== null) {
       const token: string = localStorage.getItem('token') as string;
       this.userService.getUserByToken(token).subscribe(
         (user: User) => {
@@ -31,6 +31,19 @@ export class UserComponent implements OnInit {
       console.error('No se encontró el token en el localStorage');
     }
   }
-  
-  
+
+  updateUser(): void {
+    if (this.user) {
+      this.userService.updateUserInfo(this.user).subscribe(
+        (updatedUser: User) => {
+          console.log('Usuario actualizado:', updatedUser);
+        },
+        (error) => {
+          console.error('Error al actualizar el usuario:', error);
+        }
+      );
+    } else {
+      console.error('No hay información de usuario para actualizar');
+    }
+  }
 }

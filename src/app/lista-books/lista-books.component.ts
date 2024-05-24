@@ -15,11 +15,17 @@ export class ListaBooksComponent implements OnInit{
   constructor(private bookServicio:BookService){}
 
   ngOnInit(): void {
-    this.obtenerBooks();
+   // this.obtenerBooks();
+    this.obtenerBooksDisponibles();
   }
 
-  private obtenerBooks(){
+  /*private obtenerBooks(){
     this.bookServicio.obtenerListaDeBooks().subscribe(dato => {
+      this.books = dato;
+    })
+  }*/
+  private  obtenerBooksDisponibles(){
+    this.bookServicio.obtenerLibrosDisponibles().subscribe(dato => {
       this.books = dato;
     })
   }

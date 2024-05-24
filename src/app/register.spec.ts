@@ -1,6 +1,6 @@
 import { Register } from './register';
 
-describe('Reguister', () => {
+describe('Register', () => {
   it('should create an instance', () => {
     expect(new Register()).toBeTruthy();
   });

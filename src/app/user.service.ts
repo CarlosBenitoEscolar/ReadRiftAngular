@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserInfo(): Observable<User> {
-    const token = localStorage.getItem('token'); 
+    const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
     return this.http.get<User>(`${this.baseUrl}/me`, { headers });
@@ -23,5 +23,12 @@ export class UserService {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.get<User>(`${this.baseUrl}/me`, { headers });
   }
+  updateUserInfo(updateRequest: User): Observable<User> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.http.patch<User>(`${this.baseUrl}/me`, updateRequest, { headers });
+  }
+
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,23 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'ReadRift';
+  showHeaderFooter = true;
 
-  constructor(private router: Router) {}
-  
+  constructor(private router: Router) {
+    // Escuchar cambios en la navegación
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.updateHeaderFooterVisibility();
+    });
+
+    // Actualizar inmediatamente basado en la URL actual
+    this.updateHeaderFooterVisibility();
+  }
+
+  updateHeaderFooterVisibility() {
+    this.showHeaderFooter = !this.isLoginPage() && !this.isRegisterPage();
+  }
 
   isLoginPage(): boolean {
     return this.router.url === '/login';

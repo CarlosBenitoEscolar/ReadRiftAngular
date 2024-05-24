@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { UserComponent } from './user/user.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -22,7 +24,9 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     RegisterComponent,
     AuthComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { UserComponent } from './user/user.component';
 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } // Agrega tu interceptor aquí como un proveedor
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } 
   ],
   bootstrap: [AppComponent]
 })

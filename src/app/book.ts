@@ -3,6 +3,6 @@ export class Book {
     author:string;
     title:string;
     condition:string;
-    available:boolean;
     isbn:string;
+    url_image:string;
 }
