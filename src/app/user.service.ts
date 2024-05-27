@@ -30,5 +30,9 @@ export class UserService {
     return this.http.patch<User>(`${this.baseUrl}/me`, updateRequest, { headers });
   }
 
+  getUserByEmail(email: string): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/email/${email}`);
+  }
+
 
 }

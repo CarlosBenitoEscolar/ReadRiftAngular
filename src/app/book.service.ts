@@ -23,11 +23,11 @@ export class BookService {
     return this.httpClient.get<Book[]>(`${this.baseURL}/available/true`);
   }
   
-/*
-  //este metodo nos sirve para registrar un libro
   registrarBook(book:Book) : Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,book);
   }
+  
+  /*
 
   //este metodo sirve para actualizar el libro
   actualizarBook(id:number,empleado:Empleado) : Observable<Object>{

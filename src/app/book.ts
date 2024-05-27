@@ -1,8 +1,11 @@
 export class Book {
-    id:number;
+    id?:number;
     author:string;
     title:string;
+    description:string;
     condition:string;
+    available:boolean;
     isbn:string;
     url_image:string;
+    owner_id?:number;
 }
