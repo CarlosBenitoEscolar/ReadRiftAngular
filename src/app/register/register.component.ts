@@ -12,7 +12,7 @@ import { User } from '../user';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  register: Register = { name: '', email:'' ,password: ''};
+  register: Register = { firstname: '',lastname:'', email:'' ,password: ''};
 
   user: User | undefined;
 
@@ -25,7 +25,7 @@ export class RegisterComponent {
         if (response.token) {
           localStorage.setItem('token', response.token);
         }
-        if (this.register.name !== undefined && this.register.password !== undefined) {
+        if (this.register.firstname !== undefined && this.register.password !== undefined) {
           this.loadUserByEmail(() => {
             localStorage.setItem('USER_DATA', JSON.stringify(this.user));
             // Las acciones que dependen de la carga del usuario se mueven aquí

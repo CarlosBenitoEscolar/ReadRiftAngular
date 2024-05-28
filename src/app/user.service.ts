@@ -16,18 +16,18 @@ export class UserService {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this.http.get<User>(`${this.baseUrl}/me`, { headers });
+    return this.http.get<User>(`${this.baseUrl}/token`, { headers });
   }
 
   getUserByToken(token: string): Observable<User> {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
-    return this.http.get<User>(`${this.baseUrl}/me`, { headers });
+    return this.http.get<User>(`${this.baseUrl}/token`, { headers });
   }
   updateUserInfo(updateRequest: User): Observable<User> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this.http.patch<User>(`${this.baseUrl}/me`, updateRequest, { headers });
+    return this.http.patch<User>(`${this.baseUrl}/token`, updateRequest, { headers });
   }
 
   getUserByEmail(email: string): Observable<User> {

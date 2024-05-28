@@ -1,49 +1,94 @@
 /* Estilos generales para la tabla */
 .table {
-    width: 80%;  /* Define el ancho de la tabla como el 80% del contenedor */
-    max-width: 800px;  /* Define un ancho máximo para evitar que la tabla sea demasiado grande */
-    margin: 20px auto;  /* Centra la tabla horizontalmente y añade espacio en la parte superior */
-    border-collapse: collapse;  /* Asegura que los bordes de las celdas estén juntos */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);  /* Sombra ligera para un efecto elevado */
-  }
-  
-  .table th,
-  .table td {
-    text-align: left;  /* Alineación de texto a la izquierda */
-    padding: 8px;  /* Espaciado dentro de las celdas */
-    border-bottom: 1px solid #ddd; /* Línea divisoria sutil entre filas */
-  }
-  
-  /* Estilos para el encabezado de la tabla */
-  .table-dark {
-    background-color: #343a40;  /* Fondo oscuro para el encabezado */
-    color: white;  /* Texto blanco para contraste */
-  }
-  
-  /* Alternar colores de fondo para las filas para mejorar la legibilidad */
-  .table-striped tr:nth-child(odd) {
-    background-color: #f8f9fa;  /* Color claro para filas impares */
-  }
-  
-  .table-striped tr:nth-child(even) {
-    background-color: #e9ecef;  /* Color un poco más oscuro para filas pares */
-  }
-  
-  /* Estilos para las imágenes dentro de la tabla */
-  .table img {
-    width: 100px;  /* Fija el ancho de las imágenes */
-    height: auto;  /* Altura automática para mantener la proporción */
-    border-radius: 5px;  /* Bordes redondeados para las imágenes */
-  }
-  
-  /* Estilos adicionales para mejorar la visualización */
-  .table th {
-    position: sticky;  /* Hace que el encabezado sea pegajoso */
-    top: 0;  /* Fija el encabezado en la parte superior al desplazar */
-    z-index: 10;  /* Asegura que el encabezado esté sobre otros elementos */
-    color: black;
-  }
-  h2 {
-    text-align: center;
-  }
-  
+  width: 80%;  /* Define el ancho de la tabla como el 80% del contenedor */
+  max-width: 600px;  /* Ajusta el ancho máximo para una apariencia más equilibrada */
+  margin: 40px auto;  /* Aumenta el espacio vertical y centra la tabla horizontalmente */
+  border-collapse: collapse;  /* Asegura que los bordes de las celdas estén juntos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  /* Sombra más prominente para un efecto de profundidad */
+  border-radius: 8px; /* Bordes redondeados para la tabla completa */
+  overflow: hidden; /* Oculta cualquier contenido que sobrepase los bordes redondeados */
+}
+
+.table th,
+.table td {
+  text-align: left;  /* Alineación de texto a la izquierda */
+  padding: 12px 15px;  /* Aumenta el espacio dentro de las celdas */
+  border-bottom: 1px solid #ddd; /* Línea divisoria sutil entre filas */
+}
+
+/* Estilos para el encabezado de la tabla */
+.table-dark {
+  background-color: #343a40;  /* Fondo oscuro para el encabezado */
+  color: white;  /* Texto blanco para contraste */
+  font-size: 16px; /* Tamaño de letra más grande para el encabezado */
+}
+
+/* Alternar colores de fondo para las filas para mejorar la legibilidad */
+.table-striped tr:nth-child(odd) {
+  background-color: #f8f9fa;  /* Color claro para filas impares */
+}
+
+.table-striped tr:nth-child(even) {
+  background-color: #e9ecef;  /* Color un poco más oscuro para filas pares */
+}
+
+/* Estilos para las imágenes dentro de la tabla */
+.table img {
+  width: 100px;  /* Fija el ancho de las imágenes */
+  height: auto;  /* Altura automática para mantener la proporción */
+  border-radius: 5px;  /* Bordes redondeados para las imágenes */
+}
+
+/* Estilos adicionales para mejorar la visualización */
+.table th {
+  position: sticky;  /* Hace que el encabezado sea pegajoso */
+  top: 0;  /* Fija el encabezado en la parte superior al desplazar */
+  z-index: 10;  /* Asegura que el encabezado esté sobre otros elementos */
+  background-color: #343a40; /* Mantiene el fondo al hacer scroll */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Añade espacio debajo del título para separar de la tabla */
+}
+
+/* Estilos para el formulario con coherencia con el estilo de la tabla */
+.formulario-libro {
+  background-color: #f8f9fa;  /* Fondo claro, en línea con las filas impares de la tabla */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);  /* Sombras suaves como en la tabla */
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;  /* Centrado y espaciado como la tabla */
+}
+
+.formulario-libro h2 {
+  text-align: center;
+  color: #343a40;  /* Color del encabezado de la tabla */
+}
+
+.formulario-libro input[type="text"],
+.formulario-libro input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formulario-libro button {
+  width: 100%;
+  background-color: #343a40;  /* Botón oscuro como el encabezado de la tabla */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.formulario-libro button:hover {
+  background-color: #495057;  /* Oscuro al pasar el mouse, para dar efecto de interactividad */
+}

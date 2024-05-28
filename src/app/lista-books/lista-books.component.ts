@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Book } from './../book';
 import { BookService } from './../book.service';
@@ -17,24 +18,25 @@ export class ListaBooksComponent implements OnInit{
   books:Book[];
 
   book: Book = {
-    id: 20,
-    author: 'Gabriel García Márquez',
-    title: 'Cien años de soledad',
-    description: 'nueva',
-    condition: 'New',
+    id: 1,
+    author: '',
+    title: '',
+    condition: '',
+    description: '',
+    isbn: '',
+    url_image: '',
     available: true,
-    isbn: '3',
-    url_image: 'https://example.com/cien-anos.jpg',
-    owner_id: 1,  // Supongamos que 1 es el ID de un usuario registrado
+    owner_id: 1
   };
 
-  constructor(private bookService:BookService, private UserService:UserService){}
+  constructor(private bookService:BookService, private UserService:UserService, private router: Router){}
 
   ngOnInit(): void {
    // this.obtenerBooks();
     this.obtenerBooksDisponibles();
     if(this.UserDataString){
       this.userData = JSON.parse(this.UserDataString);
+      this.book.owner_id = this.userData.id;
     }
   }
 
@@ -65,16 +67,19 @@ export class ListaBooksComponent implements OnInit{
   }
 
   registrarBook(): void {
-    this.book.owner_id = this.userData.id
-    this.bookService.registrarBook(this.book).subscribe({
-      next: (response) => {
-        console.log('Libro registrado con éxito:', response);
-        // Implementa aquí las acciones post-registro, como redirecciones o mensajes
-      },
-      error: (error) => {
-        console.error('Error registrando el libro:', error);
-      }
-    });
+    if (this.book.author && this.book.title && this.book.isbn && this.book.url_image && this.book.condition) {
+      this.bookService.registrarBook(this.book).subscribe({
+        next: (response) => {
+          console.log('Libro registrado con éxito:', response);
+          this.router.navigate(['/lista-books']);
+        },
+        error: (error) => {
+          console.error('Error registrando el libro:', error);
+        }
+      });
+    } else {
+      console.error('Todos los campos deben ser completados.');
+    }
   }
-
 }
+
