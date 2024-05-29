@@ -81,5 +81,9 @@ export class ListaBooksComponent implements OnInit{
       console.error('Todos los campos deben ser completados.');
     }
   }
+
+  comentario(bookId: number){
+    this.router.navigate(['/reviews', bookId]);
+  }
 }
 

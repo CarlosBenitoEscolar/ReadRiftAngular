@@ -1,0 +1,31 @@
+<div class="review-container">
+    <h2>Submit Your Review</h2>
+    <form (ngSubmit)="registrarReview()">
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input 
+          type="number" 
+          id="rating" 
+          name="rating" 
+          [(ngModel)]="review.rating" 
+          class="form-control" 
+          required
+          min="1"
+          max="5"
+          placeholder="Enter rating between 1 and 5">
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea 
+          id="comment" 
+          name="comment" 
+          [(ngModel)]="review.comment" 
+          class="form-control" 
+          required 
+          placeholder="Write your review here">
+        </textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+  </div>
+  

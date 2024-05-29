@@ -14,6 +14,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReviewComponent } from './review/review.component';
 
 
 
@@ -27,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     AuthComponent,
     UserComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@
       <th>Condicion</th>
       <th>ISBN</th>
       <th>Foto</th>
+      <th>Comentario</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,9 @@
       <td>{{ book.condition }}</td>
       <td>{{ book.isbn }}</td>
       <td><img [src]="book.url_image" alt="Book image" style="width:100px;height:auto;"></td>
+      <td><button type="button" (click)= "comentario( book.id! )" >Crear reseña</button></td>
+
+
     </tr>
   </tbody>
 </table>
