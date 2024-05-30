@@ -15,6 +15,11 @@ import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReviewComponent } from './review/review.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { NewbookComponent } from './newbook/newbook.component';
+import { BookComponent } from './book/book.component';
+import { MisreviewComponent } from './misreview/misreview.component';
+import { MisbooksComponent } from './misbooks/misbooks.component';
 
 
 
@@ -29,7 +34,12 @@ import { ReviewComponent } from './review/review.component';
     UserComponent,
     HeaderComponent,
     FooterComponent,
-    ReviewComponent
+    ReviewComponent,
+    PrincipalComponent,
+    NewbookComponent,
+    BookComponent,
+    MisreviewComponent,
+    MisbooksComponent
   ],
   imports: [
     BrowserModule,

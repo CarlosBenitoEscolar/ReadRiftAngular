@@ -6,19 +6,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/index']">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/principal']">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Libros disponibles</a>
+          <a class="nav-link" [routerLink]="['/lista-books']">Libros disponibles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/login']">Mi cuenta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Subir libro</a>
+          <a class="nav-link" [routerLink]="['/newbook']">Subir libro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Mis libros</a>
+          <a class="nav-link" [routerLink]="['/misbooks']">Mis libros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/misreview']">Mis reviews</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Deshabilitado</a>

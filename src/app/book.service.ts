@@ -26,20 +26,16 @@ export class BookService {
   registrarBook(book:Book) : Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,book);
   }
-  
-  /*
 
-  //este metodo sirve para actualizar el libro
-  actualizarBook(id:number,empleado:Empleado) : Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${id}`,book);
+  getBooksByOwner(ownerId: number): Observable<Book[]> {
+    return this.httpClient.get<Book[]>(`${this.baseURL}/owner/${ownerId}`);
   }
 
-  //este metodo sirve para obtener o buscar un libro
-  obtenerBookPorId(id:number):Observable<Book>{
-    return this.httpClient.get<Book>(`${this.baseURL}/${id}`);
+  updateBook(id: number, book: Book): Observable<Book> {
+    return this.httpClient.put<Book>(`${this.baseURL}/${id}`, book);
   }
 
-  eliminarBook(id:number): Observable<Object>{
-    return this.httpClient.delete(`${this.baseURL}/${id}`);
-  }*/
+  deleteBook(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.baseURL}/${id}`);
+  }
 }

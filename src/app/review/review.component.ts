@@ -24,7 +24,7 @@ export class ReviewComponent implements OnInit{
     bookId: 1,
     rating: 0,
     comment: '',
-    author_id: 1
+    authorId: 1
   }
 
   constructor(private route: ActivatedRoute, private UserService:UserService, private router: Router, private reviewService:ReviewService) { }
@@ -33,7 +33,7 @@ export class ReviewComponent implements OnInit{
   ngOnInit(): void {
     if(this.UserDataString){
       this.userData = JSON.parse(this.UserDataString);
-      this.review.author_id = this.userData.id;
+      this.review.authorId = this.userData.id;
     }
     this.route.paramMap.subscribe(params => {
       const bookIdParam = params.get('id');

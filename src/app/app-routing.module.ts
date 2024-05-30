@@ -4,15 +4,22 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ListaBooksComponent } from './lista-books/lista-books.component';
 import { ReviewComponent } from './review/review.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { NewbookComponent } from './newbook/newbook.component';
+import { MisreviewComponent } from './misreview/misreview.component';
+import { MisbooksComponent } from './misbooks/misbooks.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/register', pathMatch: 'full' },  // Redirige la ruta base a 'register'
-  { path: 'login', component: LoginComponent },          // Ruta para el LoginComponent
-  { path: 'register', component: RegisterComponent },     // Ruta para el RegisterComponent
-  { path: 'lista-books', component: ListaBooksComponent }, // Define la ruta hacia ListaBooksComponent
-  { path: 'reviews/:id', component: ReviewComponent}
-
+  { path: '', redirectTo: '/principal', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },    
+  { path: 'lista-books', component: ListaBooksComponent }, 
+  { path: 'reviews/:id', component: ReviewComponent},
+  { path: 'principal', component: PrincipalComponent},
+  { path: 'newbook', component: NewbookComponent},
+  { path: 'misreview', component: MisreviewComponent},
+  { path: 'misbooks', component: MisbooksComponent }
 ];
 
 @NgModule({

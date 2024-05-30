@@ -23,4 +23,17 @@ export class ReviewService {
     return this.httpClient.post<Review>(`${this.baseURL}`, review);
   }
 
+  getAllReviewsByAuthor(authorId: number): Observable<Review[]>{
+    return this.httpClient.get<Review[]>(`${this.baseURL}/author/${authorId}`);
+  }
+
+  deleteReview(id:number): Observable<void>{
+    return this.httpClient.delete<void>(`${this.baseURL}/${id}`);
+
+  }
+
+  updateReview(id: number, review: Review): Observable<Review> {
+    return this.httpClient.put<Review>(`${this.baseURL}/${id}`, review);
+  }
+
 }

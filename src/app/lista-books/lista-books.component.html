@@ -23,16 +23,3 @@
     </tr>
   </tbody>
 </table>
-
-<div class="formulario-libro">
-  <h2>Registrar un nuevo libro</h2>
-  <form (ngSubmit)="registrarBook()">
-    <input type="text" [(ngModel)]="book.author" name="author" placeholder="Autor" required>
-    <input type="text" [(ngModel)]="book.title" name="title" placeholder="Título" required>
-    <input type="text" [(ngModel)]="book.condition" name="condition" placeholder="Condición" required>
-    <input type="text" [(ngModel)]="book.description" name="description" placeholder="Descripción" required>
-    <input type="text" [(ngModel)]="book.isbn" name="isbn" placeholder="ISBN" required>
-    <input type="text" [(ngModel)]="book.url_image" name="url_image" placeholder="URL de la imagen" required>
-    <button type="submit">Registrar Libro</button>
-  </form>
-</div>

@@ -1,0 +1,50 @@
+<div class="book-container">
+    <h2>Tus Libros</h2>
+    <div *ngIf="books.length > 0">
+      <ul>
+        <li *ngFor="let book of books">
+          <strong>Título:</strong> {{book.title}} <br>
+          <strong>Autor:</strong> {{book.author}} <br>
+          <strong>Descripción:</strong> {{book.description}} <br>
+          <strong>Condición:</strong> {{book.condition}} <br>
+          <strong>Disponible:</strong> {{book.available ? 'Sí' : 'No'}} <br>
+          <strong>ISBN:</strong> {{book.isbn}} <br>
+          <button *ngIf="book.id !== undefined" (click)="deleteBook(book.id!)">Eliminar</button>
+          <button *ngIf="book.id !== undefined" (click)="editBook(book)">Editar</button>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="books.length === 0">
+      <p>No tienes libros todavía.</p>
+    </div>
+  
+    <div *ngIf="bookToEdit" class="edit-form">
+      <h3>Editar Libro</h3>
+      <form (ngSubmit)="updateBook()">  
+        <label for="title">Título:</label>
+        <input type="text" id="title" [(ngModel)]="bookToEdit.title" name="title" required>
+        
+        <label for="author">Autor:</label>
+        <input type="text" id="author" [(ngModel)]="bookToEdit.author" name="author" required>
+        
+        <label for="description">Descripción:</label>
+        <textarea id="description" [(ngModel)]="bookToEdit.description" name="description" required></textarea>
+        
+        <label for="condition">Condición:</label>
+        <input type="text" id="condition" [(ngModel)]="bookToEdit.condition" name="condition" required>
+        
+        <label for="available">Disponible:</label>
+        <input type="checkbox" id="available" [(ngModel)]="bookToEdit.available" name="available">
+        
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" [(ngModel)]="bookToEdit.isbn" name="isbn" required>
+        
+        <label for="url_image">URL de la Imagen:</label>
+        <input type="text" id="url_image" [(ngModel)]="bookToEdit.url_image" name="url_image" required>
+        
+        <button type="submit">Actualizar Libro</button>
+        <button type="button" (click)="cancelEdit()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+  

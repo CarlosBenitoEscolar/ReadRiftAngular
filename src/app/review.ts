@@ -3,5 +3,5 @@ export class Review {
     bookId?: number;
     rating?: number;
     comment?: string;
-    author_id?: number;
+    authorId?: number;
 }
