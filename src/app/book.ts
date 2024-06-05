@@ -7,5 +7,5 @@ export class Book {
     available:boolean;
     isbn:string;
     url_image:string;
-    owner_id?:number;
+    ownerId?:number;
 }

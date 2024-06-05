@@ -8,6 +8,7 @@
       <th>ISBN</th>
       <th>Foto</th>
       <th>Comentario</th>
+      <th>Ver libro</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +19,7 @@
       <td>{{ book.isbn }}</td>
       <td><img [src]="book.url_image" alt="Book image" style="width:100px;height:auto;"></td>
       <td><button type="button" (click)= "comentario( book.id! )" >Crear reseña</button></td>
-
+      <td><button  (click)="reservarLibro(book.id!, book.ownerId!)"> Reservar Libro</button></td>
 
     </tr>
   </tbody>

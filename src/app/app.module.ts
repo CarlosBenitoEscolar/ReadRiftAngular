@@ -20,6 +20,7 @@ import { NewbookComponent } from './newbook/newbook.component';
 import { BookComponent } from './book/book.component';
 import { MisreviewComponent } from './misreview/misreview.component';
 import { MisbooksComponent } from './misbooks/misbooks.component';
+import { ExchangeComponent } from './exchange/exchange.component';
 
 
 
@@ -39,7 +40,8 @@ import { MisbooksComponent } from './misbooks/misbooks.component';
     NewbookComponent,
     BookComponent,
     MisreviewComponent,
-    MisbooksComponent
+    MisbooksComponent,
+    ExchangeComponent,
   ],
   imports: [
     BrowserModule,

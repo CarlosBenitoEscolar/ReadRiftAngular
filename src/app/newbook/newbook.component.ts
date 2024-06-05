@@ -25,7 +25,7 @@ export class NewbookComponent implements OnInit{
     isbn: '',
     url_image: '',
     available: true,
-    owner_id: 1
+    ownerId: 1
   };
 
   constructor(private bookService:BookService, private UserService:UserService, private router: Router){}
@@ -33,7 +33,7 @@ export class NewbookComponent implements OnInit{
   ngOnInit(): void {
     if(this.UserDataString){
       this.userData = JSON.parse(this.UserDataString);
-      this.book.owner_id = this.userData.id;
+      this.book.ownerId = this.userData.id;
     }
   }
 

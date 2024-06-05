@@ -1,1 +1,14 @@
-<p>book works!</p>
+<div *ngIf="book">
+    <h2>{{ book.title }}</h2>
+    <p><strong>Autor:</strong> {{ book.author }}</p>
+    <p><strong>Descripción:</strong> {{ book.description }}</p>
+    <p><strong>Condición:</strong> {{ book.condition }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    <img [src]="book.url_image" alt="{{ book.title }}" *ngIf="book.url_image">
+    <!-- Otros detalles del libro -->
+    <button (click)="reservarLibro()">Reservar Libro</button>
+
+  </div>
+  <div *ngIf="!book">
+    <p>Cargando detalles del libro...</p>
+  </div>

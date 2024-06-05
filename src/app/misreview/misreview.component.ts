@@ -56,6 +56,7 @@ export class MisreviewComponent implements OnInit {
 
   updateReview(): void {
     if (this.reviewToEdit && this.reviewToEdit.id !== undefined) {
+      console.log('Datos para actualizar:', this.reviewToEdit);  
       this.reviewService.updateReview(this.reviewToEdit.id, this.reviewToEdit).subscribe({
         next: (response) => {
           this.reviews = this.reviews.map(review => review.id === response.id ? response : review);
@@ -68,6 +69,7 @@ export class MisreviewComponent implements OnInit {
       });
     }
   }
+  
 
   cancelEdit(): void {
     this.reviewToEdit = null;

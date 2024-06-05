@@ -8,6 +8,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { NewbookComponent } from './newbook/newbook.component';
 import { MisreviewComponent } from './misreview/misreview.component';
 import { MisbooksComponent } from './misbooks/misbooks.component';
+import { BookComponent } from './book/book.component';
+import { ExchangeComponent } from './exchange/exchange.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,11 @@ const routes: Routes = [
   { path: 'principal', component: PrincipalComponent},
   { path: 'newbook', component: NewbookComponent},
   { path: 'misreview', component: MisreviewComponent},
-  { path: 'misbooks', component: MisbooksComponent }
+  { path: 'misbooks', component: MisbooksComponent },
+  { path: 'book/:id', component: BookComponent},
+  { path: 'exchange', component: ExchangeComponent}
+
+
 ];
 
 @NgModule({
