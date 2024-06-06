@@ -36,12 +36,7 @@ export class NewbookComponent implements OnInit{
       this.book.ownerId = this.userData.id;
     }
   }
-
-  /*private obtenerBooks(){
-    this.bookServicio.obtenerListaDeBooks().subscribe(dato => {
-      this.books = dato;
-    })
-  }*/
+  
   registrarBook(): void {
     if (this.book.author && this.book.title && this.book.isbn && this.book.url_image && this.book.condition) {
       this.bookService.registrarBook(this.book).subscribe({

@@ -28,7 +28,6 @@ export class RegisterComponent {
         if (this.register.firstname !== undefined && this.register.password !== undefined) {
           this.loadUserByEmail(() => {
             localStorage.setItem('USER_DATA', JSON.stringify(this.user));
-            // Las acciones que dependen de la carga del usuario se mueven aquí
             console.log(this.user);
             this.router.navigate(['/lista-books']);
           });
@@ -46,13 +45,13 @@ export class RegisterComponent {
     this.userService.getUserByEmail(this.register.email!).subscribe({
       next: (userData) => {
         this.user = userData;
-        localStorage.setItem('USER_DATA', JSON.stringify(userData)); // Mover aquí para asegurarse que se guarda tras cargar
+        localStorage.setItem('USER_DATA', JSON.stringify(userData)); 
         console.log("User Data loaded:", this.user);
-        callback(); // Ejecutar el callback
+        callback(); 
       },
       error: (errorData) => {
         console.error('Failed to load user:', errorData);
-        callback(); // Aún ejecutar el callback, tal vez para manejar errores
+        callback(); 
       }
     });
   }

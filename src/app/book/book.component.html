@@ -1,14 +1,22 @@
-<div *ngIf="book">
-    <h2>{{ book.title }}</h2>
-    <p><strong>Autor:</strong> {{ book.author }}</p>
-    <p><strong>Descripción:</strong> {{ book.description }}</p>
-    <p><strong>Condición:</strong> {{ book.condition }}</p>
-    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-    <img [src]="book.url_image" alt="{{ book.title }}" *ngIf="book.url_image">
-    <!-- Otros detalles del libro -->
-    <button (click)="reservarLibro()">Reservar Libro</button>
+<div *ngIf="book" class="book-details-container">
+  <h2 class="book-title">{{ book.title }}</h2>
+  <p class="book-description">{{ book.description }}</p>
+  <p class="book-info"><strong>Autor:</strong> {{ book.author }}</p>
+  <p class="book-info"><strong>ISBN:</strong> {{ book.isbn }}</p>
+  <p class="book-info"><strong>Condición:</strong> {{ book.condition }}</p>
 
+  <div class="reviews-container">
+    <h3 class="reviews-title">Reseñas</h3>
+    <div *ngIf="reviews.length > 0; else noReviews" class="review-list">
+      <ul>
+        <li *ngFor="let review of reviews" class="review-item">
+          <strong>Rating:</strong> {{ review.rating }}<br>
+          <strong>Comentario:</strong> {{ review.comment }}
+        </li>
+      </ul>
+    </div>
+    <ng-template #noReviews>
+      <p class="no-reviews">No hay reseñas para este libro.</p>
+    </ng-template>
   </div>
-  <div *ngIf="!book">
-    <p>Cargando detalles del libro...</p>
-  </div>
+</div>

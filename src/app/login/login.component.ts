@@ -26,7 +26,6 @@ export class LoginComponent {
     this.loginService.login(this.email, this.password).subscribe(
       response => {
         localStorage.setItem('token', response.token);
-        // Ahora obtenemos los datos del usuario
         this.userService.getUserByToken(response.token).subscribe({
           next: (userData: User) => {
             localStorage.setItem('USER_DATA', JSON.stringify(userData));

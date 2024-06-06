@@ -1,18 +1,17 @@
 
-/* Estilos para el formulario con coherencia con el estilo de la tabla */
 .formulario-libro {
-    background-color: #f8f9fa;  /* Fondo claro, en línea con las filas impares de la tabla */
+    background-color: #f8f9fa;  
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);  /* Sombras suaves como en la tabla */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 800px;
-    margin: 20px auto;  /* Centrado y espaciado como la tabla */
+    margin: 20px auto;  
   }
   
   .formulario-libro h2 {
     text-align: center;
-    color: #343a40;  /* Color del encabezado de la tabla */
+    color: #343a40;  
   }
   
   .formulario-libro input[type="text"],
@@ -27,7 +26,7 @@
   
   .formulario-libro button {
     width: 100%;
-    background-color: #343a40;  /* Botón oscuro como el encabezado de la tabla */
+    background-color: #343a40;  
     color: white;
     padding: 10px;
     border: none;
@@ -37,6 +36,6 @@
   }
   
   .formulario-libro button:hover {
-    background-color: #495057;  /* Oscuro al pasar el mouse, para dar efecto de interactividad */
+    background-color: #495057;  
   }
   

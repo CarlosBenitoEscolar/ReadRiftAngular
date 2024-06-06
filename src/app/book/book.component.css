@@ -1,0 +1,60 @@
+.book-details-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .book-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .book-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .book-info {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .book-info strong {
+    font-weight: bold;
+  }
+  
+  .reviews-container {
+    margin-top: 30px;
+  }
+  
+  .reviews-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .review-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .review-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  .review-item strong {
+    font-weight: bold;
+  }
+  
+  .no-reviews {
+    font-size: 14px;
+    color: #888;
+  }
+  

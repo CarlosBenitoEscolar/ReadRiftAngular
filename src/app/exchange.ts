@@ -5,6 +5,7 @@ export class Exchange {
     donorId?: number;
     status?: ExchangeStatus;
     requestDate?: Date;
+    bookTitle?: string;
 }
 
 export enum ExchangeStatus {

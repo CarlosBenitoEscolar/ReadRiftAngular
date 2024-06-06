@@ -1,5 +1,4 @@
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
 import { Book } from './../book';
 import { BookService } from './../book.service';
 import { Component, OnInit } from '@angular/core';
@@ -20,15 +19,9 @@ export class ListaBooksComponent implements OnInit{
   constructor(private bookService:BookService, private router: Router, private exchangeService: ExchangeService){}
 
   ngOnInit(): void {
-   // this.obtenerBooks();
     this.obtenerBooksDisponibles();
   }
 
-  /*private obtenerBooks(){
-    this.bookServicio.obtenerListaDeBooks().subscribe(dato => {
-      this.books = dato;
-    })
-  }*/
   private  obtenerBooksDisponibles(){
     this.bookService.obtenerLibrosDisponibles().subscribe(dato => {
       this.books = dato;
@@ -47,7 +40,7 @@ export class ListaBooksComponent implements OnInit{
         bookId: bookId,
         donorId: owner_id,
         borrowerId: userData.id,
-        status: ExchangeStatus.PENDING,  // Asegúrate de usar el tipo correcto
+        status: ExchangeStatus.PENDING, 
         requestDate: new Date()
       };
 

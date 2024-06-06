@@ -38,7 +38,7 @@ export class ReviewComponent implements OnInit{
     this.route.paramMap.subscribe(params => {
       const bookIdParam = params.get('id');
       if (bookIdParam) {
-        this.review.bookId = +bookIdParam; // Convierte el string a número
+        this.review.bookId = +bookIdParam; 
       } else {
         console.error('No book ID found in route parameters');
       }

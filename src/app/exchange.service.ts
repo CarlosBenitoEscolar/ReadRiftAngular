@@ -8,17 +8,14 @@ import { Exchange, ExchangeStatus } from './exchange';
 })
 export class ExchangeService {
 
-  // URL base para el API de intercambios
   private baseURL = 'http://localhost:8080/api/exchanges';
 
   constructor(private httpClient: HttpClient) { }
 
-  // Método para obtener todas las reservas
   obtenerListaDeExchanges(): Observable<Exchange[]> {
     return this.httpClient.get<Exchange[]>(`${this.baseURL}`);
   }
 
-  // Método para obtener reservas por el ID del prestatario
   obtenerExchangesPorBorrower(borrowerId: number): Observable<Exchange[]> {
     return this.httpClient.get<Exchange[]>(`${this.baseURL}/borrower/${borrowerId}`);
   }
@@ -33,7 +30,7 @@ export class ExchangeService {
   obtenerExchangesPorEstado(status: ExchangeStatus): Observable<Exchange[]> {
     return this.httpClient.get<Exchange[]>(`${this.baseURL}/status/${status}`);
   }
-
+  
   updateExchangeStatus(id: number, status: ExchangeStatus): Observable<Exchange> {
     return this.httpClient.patch<Exchange>(`${this.baseURL}/${id}/status`, { status });
   }

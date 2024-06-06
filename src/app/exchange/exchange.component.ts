@@ -1,7 +1,10 @@
-// exchange.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ExchangeService } from './../exchange.service';
 import { Exchange, ExchangeStatus } from './../exchange';
+import { BookService } from './../book.service'; 
+import { Book } from './../book';
+
+
 
 @Component({
   selector: 'app-exchange',
@@ -14,7 +17,7 @@ export class ExchangeComponent implements OnInit {
   ExchangeStatus = ExchangeStatus; 
 
 
-  constructor(private exchangeService: ExchangeService) { }
+  constructor(private exchangeService: ExchangeService, private bookService: BookService) { }
 
   ngOnInit(): void {
     const userDataString = localStorage.getItem("USER_DATA");
@@ -52,7 +55,7 @@ export class ExchangeComponent implements OnInit {
     this.exchangeService.approveExchange(id).subscribe({
       next: (response) => {
         console.log('Intercambio aprobado con éxito:', response);
-        this.cargarExchanges();  // Recargar la lista de intercambios después de actualizar el estado
+        this.cargarExchanges();  
       },
       error: (error) => {
         console.error('Error aprobando el intercambio:', error);
@@ -64,7 +67,7 @@ export class ExchangeComponent implements OnInit {
     this.exchangeService.cancelExchange(id).subscribe({
       next: (response) => {
         console.log('Intercambio cancelado con éxito:', response);
-        this.cargarExchanges();  // Recargar la lista de intercambios después de actualizar el estado
+        this.cargarExchanges();  
       },
       error: (error) => {
         console.error('Error cancelando el intercambio:', error);

@@ -4,7 +4,8 @@ import { BookService } from '../book.service';
 import { Book } from '../book';
 import { ExchangeService } from '../exchange.service';
 import { Exchange, ExchangeStatus } from '../exchange';
-
+import { Review } from './../review';
+import { ReviewService } from './../review.service';
 
 @Component({
   selector: 'app-book',
@@ -13,12 +14,20 @@ import { Exchange, ExchangeStatus } from '../exchange';
 })
 export class BookComponent implements OnInit{
   book: Book | undefined;
+  reviews: Review[] = [];
 
-  constructor(private route: ActivatedRoute, private bookService: BookService, private exchangeService: ExchangeService) { }
+
+  constructor(private route: ActivatedRoute, private bookService: BookService, private exchangeService: ExchangeService,     private reviewService: ReviewService) { }
 
   ngOnInit(): void {
     const bookId = +this.route.snapshot.paramMap.get('id')!;
     this.getBookDetails(bookId);
+    this.getBookReviews(bookId);
+
+  }
+
+  getBookReviews(bookId: number): void {
+    this.reviewService.getAllReviewsByBookId(bookId).subscribe(reviews => this.reviews = reviews);
   }
 
   getBookDetails(id: number): void {

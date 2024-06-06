@@ -1,5 +1,3 @@
-/* exchange.component.css */
-
 .exchange-container {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -32,6 +30,7 @@
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s;
+    margin-right: 1%;
   }
   
   .approve-btn {

@@ -11,19 +11,17 @@ export class AppComponent {
   showHeaderFooter = true;
 
   constructor(private router: Router) {
-    // Escuchar cambios en la navegación
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.updateHeaderFooterVisibility();
     });
 
-    // Actualizar inmediatamente basado en la URL actual
     this.updateHeaderFooterVisibility();
   }
 
   updateHeaderFooterVisibility() {
-    this.showHeaderFooter = !this.isLoginPage() && !this.isRegisterPage();
+    this.showHeaderFooter = !this.isLoginPage() && !this.isRegisterPage() && !this.isPrincipalPage();
   }
 
   isLoginPage(): boolean {
@@ -32,5 +30,9 @@ export class AppComponent {
 
   isRegisterPage(): boolean {
     return this.router.url === '/register';
+  }
+
+  isPrincipalPage(): boolean{
+    return this.router.url === '/principal'
   }
 }

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    background-color: #f8f9fa ;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #b8b8b8;
+  }
+  
+  .navbar-nav .nav-item.active .nav-link {
+    color: #0511ad;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    color: #000000;
+  }
+  

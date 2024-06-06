@@ -1,53 +1,51 @@
-/* Estilos generales para la tabla */
+
 .table {
-  width: 80%;  /* Define el ancho de la tabla como el 80% del contenedor */
-  max-width: 600px;  /* Ajusta el ancho máximo para una apariencia más equilibrada */
-  margin: 40px auto;  /* Aumenta el espacio vertical y centra la tabla horizontalmente */
-  border-collapse: collapse;  /* Asegura que los bordes de las celdas estén juntos */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  /* Sombra más prominente para un efecto de profundidad */
-  border-radius: 8px; /* Bordes redondeados para la tabla completa */
-  overflow: hidden; /* Oculta cualquier contenido que sobrepase los bordes redondeados */
+  width: 80%;  
+  max-width: 600px;  
+  margin: 40px auto;  
+  border-collapse: collapse;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  
+  border-radius: 8px; 
+  overflow: hidden; 
 }
 
 .table th,
 .table td {
-  text-align: left;  /* Alineación de texto a la izquierda */
-  padding: 12px 15px;  /* Aumenta el espacio dentro de las celdas */
-  border-bottom: 1px solid #ddd; /* Línea divisoria sutil entre filas */
+  text-align: left; 
+  padding: 12px 15px;  
+  border-bottom: 1px solid #ddd; 
 }
 
-/* Estilos para el encabezado de la tabla */
+
 .table-dark {
-  background-color: #343a40;  /* Fondo oscuro para el encabezado */
-  color: white;  /* Texto blanco para contraste */
-  font-size: 16px; /* Tamaño de letra más grande para el encabezado */
+  background-color: #343a40; 
+  color: white;  
+  font-size: 16px;
 }
 
-/* Alternar colores de fondo para las filas para mejorar la legibilidad */
 .table-striped tr:nth-child(odd) {
-  background-color: #f8f9fa;  /* Color claro para filas impares */
+  background-color: #f8f9fa;  
 }
 
 .table-striped tr:nth-child(even) {
-  background-color: #e9ecef;  /* Color un poco más oscuro para filas pares */
+  background-color: #e9ecef; 
 }
 
-/* Estilos para las imágenes dentro de la tabla */
+
 .table img {
-  width: 100px;  /* Fija el ancho de las imágenes */
-  height: auto;  /* Altura automática para mantener la proporción */
-  border-radius: 5px;  /* Bordes redondeados para las imágenes */
+  width: 100px;  
+  height: auto; 
+  border-radius: 5px;  
 }
 
-/* Estilos adicionales para mejorar la visualización */
 .table th {
-  position: sticky;  /* Hace que el encabezado sea pegajoso */
-  top: 0;  /* Fija el encabezado en la parte superior al desplazar */
-  z-index: 10;  /* Asegura que el encabezado esté sobre otros elementos */
-  background-color: #343a40; /* Mantiene el fondo al hacer scroll */
+  position: sticky; 
+  top: 0;  
+  z-index: 10;  
+  background-color: #343a40; 
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 20px; /* Añade espacio debajo del título para separar de la tabla */
+  margin-bottom: 20px; 
 }

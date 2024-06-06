@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './user';
@@ -10,7 +11,7 @@ export class UserService {
 
   private baseUrl = 'http://localhost:8080/api/user'; 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getUserInfo(): Observable<User> {
     const token = localStorage.getItem('token');
@@ -23,16 +24,16 @@ export class UserService {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.get<User>(`${this.baseUrl}/token`, { headers });
   }
-  updateUserInfo(updateRequest: User): Observable<User> {
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
-    return this.http.patch<User>(`${this.baseUrl}/token`, updateRequest, { headers });
-  }
-
   getUserByEmail(email: string): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/email/${email}`);
   }
+
+  getUserById(id: number): Observable<User>{
+    return this.http.get<User>(`${this.baseUrl}/id/${id}`);
+  }
+
+
+
 
 
 }

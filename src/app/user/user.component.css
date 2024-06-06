@@ -1,0 +1,49 @@
+.user-details-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-details-container h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .user-details-container p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .user-details-container p strong {
+    color: #000000;
+  }
+  
+  .user-details-container .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #020202;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .user-details-container .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .loading-message {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+  }
+  

@@ -1,4 +1,4 @@
-<div class="formulario-libro">
+<div class="formulario-libro" >
     <h2>Registrar un nuevo libro</h2>
     <form (ngSubmit)="registrarBook()">
       <input type="text" [(ngModel)]="book.author" name="author" placeholder="Autor" required>
@@ -8,5 +8,6 @@
       <input type="text" [(ngModel)]="book.isbn" name="isbn" placeholder="ISBN" required>
       <input type="text" [(ngModel)]="book.url_image" name="url_image" placeholder="URL de la imagen" required>
       <button type="submit">Registrar Libro</button>
+      <button type="button" [routerLink]="['/lista-books']">Cancelar</button>
     </form>
   </div>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { User } from '../user';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-user',
@@ -10,7 +13,7 @@ import { User } from '../user';
 export class UserComponent implements OnInit {
   user: User | undefined;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.getUserByToken();
@@ -31,19 +34,8 @@ export class UserComponent implements OnInit {
       console.error('No se encontró el token en el localStorage');
     }
   }
-
-  updateUser(): void {
-    if (this.user) {
-      this.userService.updateUserInfo(this.user).subscribe(
-        (updatedUser: User) => {
-          console.log('Usuario actualizado:', updatedUser);
-        },
-        (error) => {
-          console.error('Error al actualizar el usuario:', error);
-        }
-      );
-    } else {
-      console.error('No hay información de usuario para actualizar');
-    }
+  logOut(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

@@ -1,4 +1,3 @@
-<!-- exchanges.component.html -->
 <div class="exchange-container">
     <h2>Mis Intercambios</h2>
     <div *ngIf="exchanges.length > 0">
@@ -7,8 +6,10 @@
           <strong>Libro ID:</strong> {{exchange.bookId}} <br>
           <strong>Borrower ID:</strong> {{exchange.borrowerId}} <br>
           <strong>Status:</strong> {{exchange.status}} <br><br>
+        <div *ngIf="exchange.status === 'PENDING'">
           <button (click)="approveExchange(exchange.id!)">Aceptar</button>
           <button (click)="cancelExchange(exchange.id!)">Cancelar</button>
+        </div>
         </li>
       </ul>
     </div>
