@@ -1,7 +1,8 @@
 <div class="user-details-container" *ngIf="user">
     <h2>User Details</h2>
     <p><strong>ID:</strong> {{ user.id }}</p>
-    <p><strong>Name:</strong> {{ user.firstname }}</p>
+    <p><strong>Nombre:</strong> {{ user.firstname }}</p>
+    <p><strong>Apellido:</strong> {{ user.lastname}}</p>
     <p><strong>Email:</strong> {{ user.email }}</p>
     <button (click)="logOut()">Cerrar sesión</button>
 </div>

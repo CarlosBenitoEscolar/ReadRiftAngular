@@ -11,6 +11,7 @@ import { MisbooksComponent } from './misbooks/misbooks.component';
 import { BookComponent } from './book/book.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { UserComponent } from './user/user.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -18,16 +19,16 @@ const routes: Routes = [
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },    
-  { path: 'lista-books', component: ListaBooksComponent }, 
-  { path: 'reviews/:id', component: ReviewComponent},
+  { path: 'lista-books', component: ListaBooksComponent, canActivate: [AuthGuard]  }, 
+  { path: 'reviews/:id', component: ReviewComponent, canActivate: [AuthGuard] },
   { path: 'principal', component: PrincipalComponent},
-  { path: 'newbook', component: NewbookComponent},
-  { path: 'misreview', component: MisreviewComponent},
-  { path: 'misbooks', component: MisbooksComponent },
-  { path: 'book/:id', component: BookComponent},
-  { path: 'exchange', component: ExchangeComponent},
-  { path: 'book/:id', component: BookComponent },
-  { path: 'user', component: UserComponent}
+  { path: 'newbook', component: NewbookComponent, canActivate: [AuthGuard] },
+  { path: 'misreview', component: MisreviewComponent, canActivate: [AuthGuard] },
+  { path: 'misbooks', component: MisbooksComponent, canActivate: [AuthGuard]  },
+  { path: 'book/:id', component: BookComponent, canActivate: [AuthGuard] },
+  { path: 'exchange', component: ExchangeComponent, canActivate: [AuthGuard] },
+  { path: 'book/:id', component: BookComponent, canActivate: [AuthGuard]  },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] }
 
 
 
