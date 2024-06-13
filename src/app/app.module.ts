@@ -21,6 +21,10 @@ import { BookComponent } from './book/book.component';
 import { MisreviewComponent } from './misreview/misreview.component';
 import { MisbooksComponent } from './misbooks/misbooks.component';
 import { ExchangeComponent } from './exchange/exchange.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { RequestAdminComponent } from './request-admin/request-admin.component';
 
 
 
@@ -42,6 +46,10 @@ import { ExchangeComponent } from './exchange/exchange.component';
     MisreviewComponent,
     MisbooksComponent,
     ExchangeComponent,
+    AdminDashboardComponent,
+    SuperAdminDashboardComponent,
+    UserListComponent,
+    RequestAdminComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,12 @@ export class AuthService {
     const headers = { Authorization: `Bearer ${authToken}` };
     return this.http.get<any>(this.userDataEndpoint, { headers });
   }
-
-
+  getUserRole(): Observable<string> {
+    return new Observable(observer => {
+      this.fetchUserData().subscribe(user => {
+        observer.next(user.role);
+        observer.complete();
+      });
+    });
+  }
 }

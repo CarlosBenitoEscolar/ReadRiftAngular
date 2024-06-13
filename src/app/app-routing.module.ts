@@ -12,6 +12,12 @@ import { BookComponent } from './book/book.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './auth.guard';
+import { AdminGuard } from './admin.guard';
+import { SuperAdminGuard } from './super-admin.guard';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { RequestAdminComponent } from './request-admin/request-admin.component';
 
 
 
@@ -28,10 +34,11 @@ const routes: Routes = [
   { path: 'book/:id', component: BookComponent, canActivate: [AuthGuard] },
   { path: 'exchange', component: ExchangeComponent, canActivate: [AuthGuard] },
   { path: 'book/:id', component: BookComponent, canActivate: [AuthGuard]  },
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard] }
-
-
-
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AdminGuard] },
+  { path: 'super-admin-dashboard', component: SuperAdminDashboardComponent, canActivate: [SuperAdminGuard] },
+  { path: 'user-list', component: UserListComponent, canActivate: [AdminGuard] },
+  { path: 'request-admin', component: RequestAdminComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

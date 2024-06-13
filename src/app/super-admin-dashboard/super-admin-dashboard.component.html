@@ -1,0 +1,22 @@
+<h2>Super Admin Dashboard</h2>
+<div *ngIf="adminRequests.length > 0">
+  <h3>Solicitudes de Admin</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let user of adminRequests">
+      <td>{{ user.id }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button *ngIf="user.id !== undefined" (click)="approveRequest(user.id!)">Aprobar</button>
+        <button *ngIf="user.id !== undefined" (click)="rejectRequest(user.id!)">Rechazar</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="adminRequests.length === 0">
+  <p>No hay solicitudes de admin pendientes.</p>
+</div>
