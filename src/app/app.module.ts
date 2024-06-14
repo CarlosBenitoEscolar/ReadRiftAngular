@@ -23,7 +23,6 @@ import { MisbooksComponent } from './misbooks/misbooks.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
-import { UserListComponent } from './user-list/user-list.component';
 import { RequestAdminComponent } from './request-admin/request-admin.component';
 
 
@@ -48,7 +47,6 @@ import { RequestAdminComponent } from './request-admin/request-admin.component';
     ExchangeComponent,
     AdminDashboardComponent,
     SuperAdminDashboardComponent,
-    UserListComponent,
     RequestAdminComponent,
   ],
   imports: [

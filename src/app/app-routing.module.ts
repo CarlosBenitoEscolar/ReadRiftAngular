@@ -12,14 +12,10 @@ import { BookComponent } from './book/book.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './auth.guard';
-import { AdminGuard } from './admin.guard';
-import { SuperAdminGuard } from './super-admin.guard';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { RequestAdminComponent } from './request-admin/request-admin.component';
-
-
+import { AdminGuard } from './admin.guard';
+import { SuperAdminGuard } from './super-admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/principal', pathMatch: 'full' },
@@ -27,7 +23,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },    
   { path: 'lista-books', component: ListaBooksComponent, canActivate: [AuthGuard]  }, 
   { path: 'reviews/:id', component: ReviewComponent, canActivate: [AuthGuard] },
-  { path: 'principal', component: PrincipalComponent},
+  { path: 'principal', component: PrincipalComponent },
   { path: 'newbook', component: NewbookComponent, canActivate: [AuthGuard] },
   { path: 'misreview', component: MisreviewComponent, canActivate: [AuthGuard] },
   { path: 'misbooks', component: MisbooksComponent, canActivate: [AuthGuard]  },
@@ -36,9 +32,7 @@ const routes: Routes = [
   { path: 'book/:id', component: BookComponent, canActivate: [AuthGuard]  },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AdminGuard] },
-  { path: 'super-admin-dashboard', component: SuperAdminDashboardComponent, canActivate: [SuperAdminGuard] },
-  { path: 'user-list', component: UserListComponent, canActivate: [AdminGuard] },
-  { path: 'request-admin', component: RequestAdminComponent, canActivate: [AuthGuard] }
+  { path: 'super-admin-dashboard', component: SuperAdminDashboardComponent, canActivate: [SuperAdminGuard] }
 ];
 
 @NgModule({

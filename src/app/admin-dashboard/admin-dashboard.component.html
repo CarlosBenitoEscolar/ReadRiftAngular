@@ -1,3 +1,24 @@
 <h2>Admin Dashboard</h2>
-<a routerLink="/user-list">Manage Users</a>
-<a routerLink="/request-admin">Request Admin Privileges</a>
+<div *ngIf="users.length > 0">
+  <h3>Lista de Usuarios</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.firstname }} {{ user.lastname }}</td>
+      <td>
+        <button  *ngIf="user.id !== undefined && canDeleteUser(user)" (click)="deleteUser(user.id!)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="users.length === 0">
+  <p>No hay usuarios registrados.</p>
+</div>
+
