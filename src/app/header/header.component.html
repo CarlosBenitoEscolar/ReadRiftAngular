@@ -32,9 +32,6 @@
         <li class="nav-item" *ngIf="isSuperAdmin()">
           <a class="nav-link" [routerLink]="['/super-admin-dashboard']">Super Admin Dashboard</a>
         </li>
-        <li class="nav-item" *ngIf="isNormalUser()">
-          <a class="nav-link" [routerLink]="['/request-admin']">Solicitar ser Admin</a>
-        </li>
       </ul>
     </div>
   </nav>

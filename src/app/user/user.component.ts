@@ -34,6 +34,15 @@ export class UserComponent implements OnInit {
       console.error('No se encontró el token en el localStorage');
     }
   }
+  requestAdmin(): void {
+    this.userService.requestAdmin().subscribe(() => {
+      console.log('Solicitud para ser admin enviada.');
+      alert('Solicitud para ser admin enviada.');
+    }, error => {
+      console.error('Error al enviar la solicitud para ser admin:', error);
+      alert('Error al enviar la solicitud para ser admin.');
+    });
+  }
   logOut(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
