@@ -1,3 +1,21 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Hace que el cuerpo tenga al menos la altura de la pantalla */
+}
+
+.content {
+  flex: 1; /* Ocupa el espacio disponible */
+}
+
+footer {
+  flex-shrink: 0; /* Evita que el footer se reduzca más de lo necesario */
+}
 
   @media (max-width: 768px) {
     .navbar-nav {

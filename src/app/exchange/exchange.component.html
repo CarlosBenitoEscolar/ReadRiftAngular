@@ -3,8 +3,9 @@
     <div *ngIf="exchanges.length > 0">
       <ul>
         <li *ngFor="let exchange of exchanges">
-          <strong>Libro ID:</strong> {{exchange.bookId}} <br>
+          <strong>Donor ID:</strong> {{exchange.bookId}} <br>
           <strong>Borrower ID:</strong> {{exchange.borrowerId}} <br>
+          <strong>Libro ID:</strong> {{exchange.donorId}} <br>
           <strong>Status:</strong> {{exchange.status}} <br><br>
         <div *ngIf="exchange.status === 'PENDING'">
           <button (click)="approveExchange(exchange.id!)">Aceptar</button>

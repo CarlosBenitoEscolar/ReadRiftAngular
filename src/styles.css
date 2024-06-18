@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-container {
+    min-height: 100vh;  /* esto garantiza que el contenedor principal tome al menos la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1;  /* Esto asegura que este div tome el espacio disponible */
+  }
+  
