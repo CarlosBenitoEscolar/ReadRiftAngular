@@ -30,9 +30,15 @@
         <label for="description">Descripción:</label>
         <textarea id="description" [(ngModel)]="bookToEdit.description" name="description" required></textarea>
         
-        <label for="condition">Condición:</label>
-        <input type="text" id="condition" [(ngModel)]="bookToEdit.condition" name="condition" required>
-        
+      
+          <label for="condition">Condición</label>
+          <select id="condition" [(ngModel)]="bookToEdit.condition" name="condition" class="form-control" required>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Usado">Usado</option>
+            <option value="Muy usado">Muy usado</option>
+            <option value="Bastante usado">Bastante usado</option>
+          </select>
+       
         <label for="available">Disponible:</label>
         <input type="checkbox" id="available" [(ngModel)]="bookToEdit.available" name="available">
         

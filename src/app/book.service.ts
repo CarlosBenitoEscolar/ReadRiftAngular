@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Book } from './book';
@@ -37,5 +37,19 @@ export class BookService {
   }
   getBookById(id: number): Observable<Book> {
     return this.httpClient.get<Book>(`${this.baseURL}/${id}`);
+  }
+
+  buscarLibros(title: string, author: string, isbn: string): Observable<Book[]> {
+    let params = new HttpParams();
+    if (title) {
+      params = params.set('title', title);
+    }
+    if (author) {
+      params = params.set('author', author);
+    }
+    if (isbn) {
+      params = params.set('isbn', isbn);
+    }
+    return this.httpClient.get<Book[]>(`${this.baseURL}/search`, { params });
   }
 }

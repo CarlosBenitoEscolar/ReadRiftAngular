@@ -20,7 +20,7 @@ export class NewbookComponent implements OnInit{
     id: 1,
     author: '',
     title: '',
-    condition: '',
+    condition: 'Nuevo',
     description: '',
     isbn: '',
     url_image: '',

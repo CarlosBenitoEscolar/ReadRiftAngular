@@ -3,7 +3,15 @@
     <form (ngSubmit)="registrarBook()">
       <input type="text" [(ngModel)]="book.author" name="author" placeholder="Autor" required>
       <input type="text" [(ngModel)]="book.title" name="title" placeholder="Título" required>
-      <input type="text" [(ngModel)]="book.condition" name="condition" placeholder="Condición" required>
+      <div class="form-group">
+        <label for="condition">Condición</label>
+        <select id="condition" [(ngModel)]="book.condition" name="condition" class="form-control" required>
+          <option value="Nuevo">Nuevo</option>
+          <option value="Usado">Usado</option>
+          <option value="Muy usado">Muy usado</option>
+          <option value="Bastante usado">Bastante usado</option>
+        </select>
+      </div>
       <input type="text" [(ngModel)]="book.description" name="description" placeholder="Descripción" required>
       <input type="text" [(ngModel)]="book.isbn" name="isbn" placeholder="ISBN" required>
       <input type="text" [(ngModel)]="book.url_image" name="url_image" placeholder="URL de la imagen" required>

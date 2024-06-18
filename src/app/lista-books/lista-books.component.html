@@ -1,10 +1,20 @@
 <h2>Lista de libros disponibles</h2>
+
+<div class="search-container">
+  <form (ngSubmit)="buscarLibros()">
+    <input type="text" [(ngModel)]="searchTitle" name="title" placeholder="Título" />
+    <input type="text" [(ngModel)]="searchAuthor" name="author" placeholder="Autor" />
+    <input type="text" [(ngModel)]="searchIsbn" name="isbn" placeholder="ISBN" />
+    <button type="submit">Buscar</button>
+  </form>
+</div>
+
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
       <th>Autor</th>
       <th>Titulo</th>
-      <th>Condicion</th>
+      <th>Condición</th>
       <th>ISBN</th>
       <th>Foto</th>
       <th>Detalles</th>
@@ -21,8 +31,9 @@
       <td><img [src]="book.url_image" alt="Book image" style="width:100px;height:auto;"></td>
       <td><button [routerLink]="['/book', book.id]">Ver Detalles </button></td>
       <td><button type="button" (click)= "comentario( book.id! )" >Crear reseña</button></td>
-      <td><button  (click)="reservarLibro(book.id!, book.ownerId!)"> Reservar Libro</button></td>
-
+      <td><button *ngIf="!book.requested" (click)="reservarLibro(book.id!, book.ownerId!)">Reservar Libro</button>
+        <span *ngIf="book.requested">Solicitud hecha</span>
+      </td>
     </tr>
   </tbody>
 </table>
