@@ -12,11 +12,17 @@ import { AuthService } from '../auth.service';
 })
 export class UserComponent implements OnInit {
   user: User | undefined;
+  userRole: string | null = null;
 
   constructor(private userService: UserService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.getUserByToken();
+    if (this.authService.isAuthenticated()) {
+      this.userService.getUserInfo().subscribe(user => {
+        this.userRole = user.role || null;
+      });
+    }
   }
 
   getUserByToken(): void {
@@ -46,5 +52,9 @@ export class UserComponent implements OnInit {
   logOut(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+  
+  isUser(): boolean {
+    return this.userRole === 'USER';
   }
 }

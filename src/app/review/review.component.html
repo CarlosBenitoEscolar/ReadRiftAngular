@@ -1,8 +1,8 @@
 <div class="review-container">
-    <h2>Submit Your Review</h2>
+    <h2>¿Qué te ha parecido el libro?</h2>
     <form (ngSubmit)="registrarReview()">
       <div class="form-group">
-        <label for="rating">Rating:</label>
+        <label for="rating">Puntuación:</label>
         <input 
           type="number" 
           id="rating" 
@@ -12,20 +12,20 @@
           required
           min="1"
           max="5"
-          placeholder="Enter rating between 1 and 5">
+          placeholder="Elige tu puntuación de 1 a 5">
       </div>
       <div class="form-group">
-        <label for="comment">Comment:</label>
+        <label for="comment">Comentarios:</label>
         <textarea 
           id="comment" 
           name="comment" 
           [(ngModel)]="review.comment" 
           class="form-control" 
           required 
-          placeholder="Write your review here">
+          placeholder="Escribe aquí tu reseña">
         </textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit Review</button>
+      <button type="submit" class="btn btn-primary">Enviar Reseña</button>
     </form>
   </div>
   

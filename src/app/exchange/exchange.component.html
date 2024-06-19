@@ -9,7 +9,7 @@
           <strong>Status:</strong> {{exchange.status}} <br><br>
         <div *ngIf="exchange.status === 'PENDING'">
           <button (click)="approveExchange(exchange.id!)">Aceptar</button>
-          <button (click)="cancelExchange(exchange.id!)">Cancelar</button>
+          <button (click)="cancelExchange(exchange.id!)">Rechazar</button>
         </div>
         </li>
       </ul>
